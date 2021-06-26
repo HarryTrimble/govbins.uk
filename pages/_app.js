@@ -10,7 +10,7 @@ export default function Govbins({ Component, pageProps }) {
   const router = useRouter();
 
   return (
-    <React.Fragment>
+    <>
       <Head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -60,25 +60,30 @@ export default function Govbins({ Component, pageProps }) {
       </style>
       <div className="font-rubik text-gray-800">
         <header
-          className={`w-screen p-5 pb-10 leading-normal sm:flex sm:justify-between ${
+          className={`w-screen pr-5 pl-5 pt-4 pb-10 md:flex sm:justify-between ${
             router.pathname === "/" ? "" : "border-b-2 border-gray-800"
           }`}
         >
-          <h1 className="text-4xl sm:w-full">
+          <h1 className="text-4xl w-full md:w-1/2 pt-2">
             <Link href="/">
               <a>#govbins</a>
             </Link>
           </h1>
-          <nav className="w-full text-xl sm:mt-4">
-            <ul className="sm:text-right">
-              <li className="inline-block mr-5">
-                <A href="/submit-photos">Submit photos</A>
+          <nav className="w-full md:w-1/2 text-xl sm:mt-5">
+            <ul className="flex flex-row md:justify-end space-x-2 md:space-x-4">
+              <li>
+                <A href="/submit-photos">
+                  Submit <span className="hidden md:inline">photos</span>
+                </A>
               </li>
-              <li className="inline-block mr-5">
+              <li>
                 <A href="/about">About</A>
               </li>
-              <li className="inline-block">
+              <li>
                 <A href="/map">Map</A>
+              </li>
+              <li>
+                <A href="/search">Search</A>
               </li>
             </ul>
           </nav>
@@ -87,6 +92,6 @@ export default function Govbins({ Component, pageProps }) {
           <Component {...pageProps} />
         </main>
       </div>
-    </React.Fragment>
+    </>
   );
 }

@@ -66,11 +66,14 @@ const Bin = ({ bin }) => {
           key="og_title"
         />
       </Head>
-      <div className="mx-auto lg:mt-20 w-full px-4 lg:px-0 lg:w-3/4 grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-y-20">
-        <div>
-          <h2 className="text-3xl mb-5">{bin.councilName}</h2>
-
-          {bin.collectionDate && <P>{bin.collectionDate}</P>}
+      <div className="md:flex w-full md:w-10/12 mx-auto justify-between md:mt-12">
+        <div className="lg:w-3/12 pt-5 px-5 md:px-0 text-2xl font-rubik">
+          {bin.councilName && (
+            <h1 className="text-3xl mb-5">{bin.councilName}</h1>
+          )}
+          {bin.collectionDate && (
+            <h2 className="text-xl">{bin.collectionDate}</h2>
+          )}
           <Contributor bin={bin} />
         </div>
         <div className="col-span-2">
